@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <head>
         <meta charset="UTF-8" />
         <title>Hello React!</title>
     </head>
@@ -16,18 +17,12 @@
             }
             class HelloWorld extends React.Component {
                 render() {
-                    return React.createElement('div', { id: 'hello-world' }, 'Hello World');
+                    return React.createElement('div', { id: 'hello-world' }, 'Hello World', React.createElement(MyWorld));
                 }
             }
            ReactDOM.render(
-                React.createElement(
-                    React.Fragment, // A parent container
-                    null, 
-                    React.createElement(HelloWorld), 
-                    React.createElement(MyWorld)
-                ), 
-                document.getElementById('root')
-);
+                React.createElement(HelloWorld), document.getElementById('root')
+                );
         </script>
     </body>
 </html>
